@@ -1,0 +1,184 @@
+.cart {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 6;
+  color: black;
+  background-color: rgba(158, 158, 158, 0.675);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+}
+.scroll {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+  }
+
+  /*Tạo thanh cuộn cho trình duyệt Firefox*/
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+.none {
+  opacity: 0;
+  pointer-events: none;
+  position: relative;
+
+  height: 0;
+}
+.cart_form {
+  text-align: start;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+  width: 600px;
+
+  max-height: 480px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  span {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  span:hover {
+    opacity: 0.8;
+  }
+  h1 {
+    border-bottom: 1px solid #ccc;
+    padding: 14px 12px;
+    font-size: 1.2rem;
+
+    text-align: center;
+  }
+  div {
+    padding: 8px 12px;
+    flex: 1;
+  }
+
+  .cartList {
+    display: flex;
+    padding: 12px;
+    width: 100%;
+    .cartList_product {
+      width: 50%;
+      img {
+        border-radius: 4px;
+      }
+      p {
+        font-size: 0.8rem;
+        opacity: 0.8;
+        padding: none;
+        max-height: 3.6em;
+        word-wrap: break-word;
+        white-space: normal;
+        overflow: hidden;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+    }
+    .cartList_delta {
+      h3 {
+        font-weight: 500;
+        div {
+          margin-left: 5px;
+          padding: 0;
+          width: 10px;
+          height: 10px;
+          display: inline-block;
+          border-radius: 100%;
+        }
+        font-size: 0.8rem;
+        margin: 2px;
+      }
+      button {
+        margin-top: 16px;
+        padding: 8px 12px;
+        border: none;
+        background-color: rgb(255, 75, 75);
+        color: white;
+        border-radius: 4px;
+      }
+      button:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  h2 {
+    padding: 14px 12px;
+    border-top: 1px solid #ccc;
+
+    font-size: 1rem;
+  }
+}
+.selcectSize {
+  background-color: rgb(26, 190, 255);
+  display: inline-block;
+  padding: 4px 6px 6px 6px;
+  border-radius: 6px;
+  color: white;
+}
+@media only screen and (min-width: 1024px) {
+  .cartEmpty {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+
+    img {
+      width: 80%;
+      height: 260px;
+    }
+  }
+}
+
+/* Chia layout trên kích thước màn hình trung bình */
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .cartEmpty {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+
+    img {
+      width: 80%;
+      height: 300px;
+    }
+  }
+}
+
+/* Chia layout trên kích thước màn hình nhỏ */
+@media only screen and (max-width: 767px) {
+  .cart {
+    width: 100vw;
+  }
+  .none {
+    width: 100vw;
+  }
+  .cart_form {
+    width: 300px;
+  }
+  .cartEmpty {
+    display: block;
+    img {
+      overflow: hidden;
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
