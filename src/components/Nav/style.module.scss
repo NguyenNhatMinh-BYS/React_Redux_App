@@ -97,9 +97,12 @@ h4:hover {
 }
 
 /* Chia layout trên kích thước màn hình trung bình */
-@media only screen and (max-width: 1023px) and (min-width: 768px) {
+@media only screen and (max-width: 1023px) and (min-width: 760px) {
   .header_avar_title {
     height: 100%;
+    h4 {
+      display: block;
+    }
   }
 }
 
@@ -139,6 +142,11 @@ h4:hover {
     h4 {
       margin-top: 40px;
       width: 80%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      align-items: center;
     }
     .header_avar_cart {
       span {
